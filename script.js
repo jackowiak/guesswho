@@ -109,7 +109,9 @@ function checkPlayer() {
 function giveUp() {
     ifStillInGame = false;
     
-    $("h1").text("Oh, you can't.").css("color", "#ff6666").addClass("animated shake");
+    if ($("h1").text() != "Well done!") {
+        $("h1").text("Oh, you can't.").css("color", "#ff6666").addClass("animated shake");
+    }   
     
     for (j = 0; j < players.length; j++) {
         if (players[j].textContent == "?") {
